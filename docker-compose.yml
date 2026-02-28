@@ -1,0 +1,49 @@
+version: '3.8'
+
+services:
+  db:
+    image: postgres:15-alpine
+    container_name: etl_db
+    restart: always
+    env_file: .env
+    environment:
+      POSTGRES_USER: ${DB_USER:-etl_user}
+      POSTGRES_PASSWORD: ${DB_PASSWORD:-etl_pass}
+      POSTGRES_DB: ${DB_NAME:-etl_testing}
+    volumes:
+      - postgres_data:/var/lib/postgresql/data
+    ports:
+      - "5432:5432"
+
+  backend:
+    build: ./backend
+    container_name: etl_backend
+    restart: always
+    depends_on:
+      - db
+    env_file: .env
+    environment:
+      - DATABASE_URL=postgresql://${DB_USER:-etl_user}:${DB_PASSWORD:-etl_pass}@db:5432/${DB_NAME:-etl_testing}
+      - AI_PROVIDER=${AI_PROVIDER}
+      - AI_MODEL=${AI_MODEL}
+      - AI_API_KEY=${AI_API_KEY}
+      - UPLOAD_DIR=/app/uploads
+    volumes:
+      - ./backend/uploads:/app/uploads
+    ports:
+      - "8000:8000"
+
+  frontend:
+    build:
+      context: ./frontend
+      args:
+        - VITE_API_BASE_URL=${VITE_API_BASE_URL:-/api}
+    container_name: etl_frontend
+    restart: always
+    depends_on:
+      - backend
+    ports:
+      - "80:80"
+
+volumes:
+  postgres_data:
