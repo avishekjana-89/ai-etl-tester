@@ -35,16 +35,16 @@ CREATE TABLE `products_dim` (
 );
 
 INSERT INTO `products_dim` (`prod_sk`, `prod_id`, `prod_name`, `cat_name`, `base_price`) VALUES 
-(1, NULL, NULL, 'Cat_1', NULL),
-(2, NULL, NULL, 'Cat_2', NULL),
-(3, NULL, NULL, 'Cat_3', NULL),
-(4, NULL, NULL, 'Cat_4', NULL),
-(5, NULL, NULL, 'Cat_5', NULL),
-(6, NULL, NULL, 'Cat_6', NULL),
-(7, NULL, NULL, 'Cat_7', NULL),
-(8, NULL, NULL, 'Cat_8', NULL),
-(9, NULL, NULL, 'Cat_9', NULL),
-(10, NULL, NULL, 'Cat_10', NULL);
+(1, 1, NULL, 'Cat_1', NULL),
+(2, 2, NULL, 'Cat_2', NULL),
+(3, 3, NULL, 'Cat_3', NULL),
+(4, 4, NULL, 'Cat_4', NULL),
+(5, 5, NULL, 'Cat_5', NULL),
+(6, 6, NULL, 'Cat_6', NULL),
+(7, 7, NULL, 'Cat_7', NULL),
+(8, 8, NULL, 'Cat_8', NULL),
+(9, 9, NULL, 'Cat_9', NULL),
+(10, 10, NULL, 'Cat_10', NULL);
 
 CREATE TABLE `geo_dim` (
   `geo_sk` tinyint NOT NULL AUTO_INCREMENT,
@@ -70,15 +70,15 @@ CREATE TABLE `customers_dim` (
 );
 
 INSERT INTO `customers_dim` (`cust_sk`, `cust_id`, `cust_name`, `region`, `valid_from`, `valid_to`, `is_current`) VALUES 
-(1, 101, 'Acme Corp', 'NR', '2025-12-01', '9999-12-31', 1),
-(2, 102, 'Tech Ltd', 'SR', '2025-12-01', '9999-12-31', 1),
-(3, 103, 'Global Inc', 'ER', '2025-12-01', '9999-12-31', 1),
-(4, 104, 'RetailMax', 'NR', '2025-12-01', '9999-12-31', 1),
-(5, 105, 'DataWorks', 'SR', '2025-12-01', '9999-12-31', 1),
-(6, 106, 'CloudPeak', 'ER', '2025-12-01', '9999-12-31', 1),
-(7, 107, 'SysNova', 'NR', '2025-12-01', '9999-12-31', 1),
-(8, 108, 'InfoGrid', 'SR', '2025-12-01', '9999-12-31', 1),
-(9, 109, 'NetForge', 'ER', '2025-12-01', '9999-12-31', 1),
-(10, 110, 'ByteZone', 'NR', '2025-12-01', '9999-12-31', 1),
-(11, 101, 'Acme Corp Updated', 'NR', '2026-02-01', '9999-12-31', 1),
-(12, 101, 'Acme Corp', 'NR', '2025-12-01', '2026-02-01', 0);
+(1, 1, 'Acme Corp', 'NR', '2025-12-01', '9999-12-31', 1),
+(2, 2, 'Tech Ltd', 'SR', '2025-12-01', '9999-12-31', 1),
+(3, 3, 'Global Inc', 'ER', '2025-12-01', '9999-12-31', 1),
+(4, 4, 'RetailMax', 'NR', '2025-12-01', '9999-12-31', 1),
+(5, 5, 'DataWorks', 'SR', '2025-12-01', '9999-12-31', 1),
+(6, 6, 'CloudPeak', 'ER', '2025-12-01', '9999-12-31', 1),
+(7, 7, 'SysNova', 'NR', '2025-12-01', '9999-12-31', 1),
+(8, 8, 'InfoGrid', 'SR', '2025-12-01', '9999-12-31', 1),
+(9, 9, 'NetForge', 'ER', '2025-12-01', '9999-12-31', 1),
+(10, 10, 'ByteZone', 'NR', '2025-12-01', '9999-12-31', 1),
+(11, 11, 'Acme Corp Updated', 'NR', '2026-02-01', '9999-12-31', 1),
+(12, 12, 'Acme Corp', 'NR', '2025-12-01', '2026-02-01', 0);

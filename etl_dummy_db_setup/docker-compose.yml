@@ -2,7 +2,7 @@ version: '3.8'
 
 services:
   source_postgres:
-    image: postgres:15
+    image: postgres:15-alpine
     container_name: dummy_source_postgres
     environment:
       POSTGRES_USER: user
